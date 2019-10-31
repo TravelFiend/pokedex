@@ -5,7 +5,6 @@ header {
     align-items: center;
     background: #1C5D99;
     border-bottom: 2px solid #222222;
-    grid-area: 'header';
 }
 
 h1 {
@@ -25,7 +24,9 @@ a {
 main {
     font-family: 'PT Sans', sans-serif;
     background: #EAF2EF;
+    color: #222222;
     height: 100vh;
+    /* width: 100vw; */
 }
 
 .search {
@@ -35,7 +36,6 @@ main {
     background: #639FAB;
     padding: 5px;
     border-bottom: #222222;
-    grid-area: 'search';
 }
 
 .search-drop {
@@ -45,8 +45,6 @@ main {
 
 .sort {
     background: #BBCDE5;
-    padding: 15px;
-    grid-area: 'sort';
 }
 
 label {
@@ -60,9 +58,105 @@ ul {
     align-items: space-around;
 }
 
-li {
+.poke-cards {
     background: #BBCDE5;
     border: 1px solid #1C5D99;
+    color: #222222;
+    font-size: 20px;
     width: 45vw;
-    height: 200px;;
+    height: 220px;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+}
+
+#pages {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.radios {
+    background: linear-gradient(#BBCDE5, #EAF2EF);
+    padding: 10px;
+}
+
+#sort-text{
+    font-size: 20px;
+    padding: 10px 30px;
+}
+
+.card-img {
+    border: 1px solid #1C5D99;
+    margin: 2px;
+    max-width: 97%;
+    border-radius: 5px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: center;
+    max-height: 53%;
+    max-width: 100%;
+}
+
+h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.attributes {
+    line-height: 25px;
+}
+
+.cards { grid-area: cards;}
+header { grid-area: header;}
+.search { grid-area: search;}
+.sort { grid-area: sort;}
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "search"
+        "sort"
+        "cards"
+}
+
+.page-button {
+    margin-left: 10px;
+}
+
+@media (min-width: 500px) {
+    #container {
+        display: grid;
+        grid-template-columns: 1fr 2fr 2fr;
+        grid-template-areas: 
+            "header header header"
+            "search search search"
+            "sort cards cards"
+            "sort cards cards";
+    }
+    .poke-cards {
+        background: #BBCDE5;
+        border: 1px solid #1C5D99;
+        color: #222222;
+        font-size: 20px;
+        width: 45vw; 
+        max-width: 250px;
+        height: 220px;
+        margin: 0 0 10px 0;
+        border-radius: 5px;
+    }
+
+    .search {
+        border-bottom: 2px solid #1C5D99;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+
+    .sort {
+        border-right: 2px solid #1C5D99;
+    }
 }
