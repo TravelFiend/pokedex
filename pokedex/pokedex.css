@@ -16,7 +16,6 @@ h1 {
 
 a {
     margin-right: 15px;
-    font-family: 'PT Sans', sans-serif;
     text-decoration: none;
     color: #EAF2EF;
 }
@@ -41,6 +40,10 @@ main {
 .search-drop {
     display: flex;
     margin: 10px;
+}
+
+#search-by {
+    margin: 0 10px;
 }
 
 .sort {
@@ -107,6 +110,7 @@ h2 {
 
 .attributes {
     line-height: 25px;
+    margin: 0 5px;
 }
 
 .cards { grid-area: cards;}
@@ -122,6 +126,10 @@ header { grid-area: header;}
         "search"
         "sort"
         "cards"
+}
+
+a, .search, .sort, .cards {
+    font-family: 'PT Sans', sans-serif;
 }
 
 .page-button {
