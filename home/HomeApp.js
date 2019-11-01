@@ -8,8 +8,10 @@ class HomeApp extends Component {
     }
 
     renderHTML() {
-        return `
-            <div class="container"></div>
+        return /*html*/`
+            <div class="container">
+                <p>You are home, check out <a href="./pokedex.html">our Pokédex</a>!</p>
+            </div>
         `;
     }
 }
