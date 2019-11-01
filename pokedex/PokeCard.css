@@ -5,9 +5,9 @@ h2 {
 }
 
 .card-img {
-    border: 1px solid #1C5D99;
     margin: 2px;
     max-width: 97%;
+    height: 150px;
     border-radius: 5px;
 }
 
@@ -32,5 +32,5 @@ h2 {
 
 .attributes {
     line-height: 25px;
-    margin: 0 5px;
+    margin: 0 10px;
 }
