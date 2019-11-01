@@ -7,6 +7,10 @@
     border-bottom: #222222;
 }
 
+.search {
+    margin-top: 52px;
+}
+
 .search-drop {
     display: flex;
     margin: 10px;
