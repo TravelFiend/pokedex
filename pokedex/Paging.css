@@ -1,0 +1,10 @@
+#pages {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+    font-size: 30px;
+}
+
+.page-button {
+    margin-left: 10px;
+}

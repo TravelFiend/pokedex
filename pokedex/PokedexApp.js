@@ -5,6 +5,16 @@ import Sort from './Sort.js';
 import PokeList from './PokeList.js';
 import Paging from './Paging.js';
 
+const pokeCards = [
+    {
+        pokemon: 'venusaur',
+        type_1: 'grass',
+        attack: 82,
+        defense: 83,
+        url_image: 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png'
+    }
+];
+
 class PokedexApp extends Component {
     onRender(el){
         const header = new Header();
@@ -19,7 +29,7 @@ class PokedexApp extends Component {
         sortSection.prepend(sort.renderDOM());
 
         const cardSection = el.querySelector('.cards');
-        const pokeList = new PokeList();        
+        const pokeList = new PokeList({pokeCards: pokeCards });     
         cardSection.prepend(pokeList.renderDOM());
         
         const paging = new Paging();

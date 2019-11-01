@@ -3,33 +3,18 @@ import PokeCard from './PokeCard.js';
 
 class PokeList extends Component{
     onRender(el){
-        const pokeCard = new PokeCard();
-        el.prepend(pokeCard.renderDOM());
+        const pokeCards = this.props.pokeCards;
+
+        pokeCards.forEach(card => {
+            const props = { card: card };
+            const pokeCard = new PokeCard(props);
+            el.prepend(pokeCard.renderDOM());
+        });
     }
 
     renderHTML(){
         return /*html*/`
-            <ul>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-                <li class="poke-cards"></li>
-            </ul>
+            <ul></ul>
         `;
     }
 }
