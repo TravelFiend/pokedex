@@ -5,21 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:500|PT+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../reset.css">
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="./pokedex.css">
+    <link rel="stylesheet" href="./common/reset.css">
+    <link rel="stylesheet" href="./common/style.css">
+    <link rel="stylesheet" href="./pokedex/pokedex.css">
     <title>Pokédex</title>
 </head>
 <body>
-    <div id="container">
-        <header>
-            <h1>Pokédex</h1>
-            <nav>
-                <a href="../">HOME</a>
-                <a href="#">POKÉDEX</a>
-            </nav>
-        </header>
-        
         <section class="search">
             <div class="search-drop">
                 <p>Search by:</p>
@@ -35,6 +26,7 @@
                 <button type="submit" form="search-box" value="submit">&#x1f50d;</button>
             </form>
         </section>
+
         <section class="sort">
             <p id="sort-text">Sort By: </p>
             <div class="radios">
@@ -54,9 +46,10 @@
                 <label for="defense">Defense</label>
             </div>
         </section>
+
         <section class="cards">
             <div id="pages">
-                <p>Page</p>
+                <p>Page <span id="current-page"></span> of <span id="total-pages"></span></p>
                 <button class="page-button">&#8678;</button>
                 <button class="page-button">&#8680;</button>
             </div>
@@ -67,9 +60,9 @@
                     </div>
                     <div class="info">
                         <h2>Pikachu</h2>
-                        <p class="attributes">Type: <span></span></p>
-                        <p class="attributes">Attack: <span></span></p>
-                        <p class="attributes">Defense: <span></span></p>
+                        <p class="attributes">Type: <span id="type"></span></p>
+                        <p class="attributes">Attack: <span id="attack"></span></p>
+                        <p class="attributes">Defense: <span id="defense"></span></p>
                     </div>
                 </li>
                 <li class="poke-cards"></li>
@@ -93,7 +86,6 @@
                 <li class="poke-cards"></li>
             </ul>
         </section>
-    </div>
-    <!-- <script src=""></script> -->
+    <script type="module" src="./pokedex/index.js"></script>
 </body>
 </html>
