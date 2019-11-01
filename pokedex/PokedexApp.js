@@ -4,19 +4,10 @@ import Search from './Search.js';
 import Sort from './Sort.js';
 import PokeList from './PokeList.js';
 import Paging from './Paging.js';
-
-const pokeCards = [
-    {
-        pokemon: 'venusaur',
-        type_1: 'grass',
-        attack: 82,
-        defense: 83,
-        url_image: 'http://assets.pokemon.com/assets/cms2/img/pokedex/full/003.png'
-    }
-];
+import { getPokemon } from '../services/pokedex-api.js';
 
 class PokedexApp extends Component {
-    onRender(el){
+    async onRender(el){
         const header = new Header();
         el.prepend(header.renderDOM());
 
@@ -29,8 +20,12 @@ class PokedexApp extends Component {
         sortSection.prepend(sort.renderDOM());
 
         const cardSection = el.querySelector('.cards');
-        const pokeList = new PokeList({pokeCards: pokeCards });     
+        const pokeList = new PokeList({ pokeCards: [] });     
         cardSection.prepend(pokeList.renderDOM());
+
+        const response = await getPokemon();
+        const pokeCards = response.results;
+        pokeList.update({ pokeCards: pokeCards });
         
         const paging = new Paging();
         cardSection.prepend(paging.renderDOM());
