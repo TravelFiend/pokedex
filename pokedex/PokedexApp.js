@@ -23,12 +23,21 @@ class PokedexApp extends Component {
         const pokeList = new PokeList({ pokeCards: [] });     
         cardSection.prepend(pokeList.renderDOM());
 
-        const response = await getPokemon();
-        const pokeCards = response.results;
-        pokeList.update({ pokeCards: pokeCards });
+        async function loadPokemon() {
+            const response = await getPokemon();
+            
+            const pokeCards = response.results;
+            pokeList.update({ pokeCards: pokeCards });
+        }
+
+        loadPokemon();
         
         const paging = new Paging();
         cardSection.prepend(paging.renderDOM());
+
+        window.addEventListener('hashchange', () => {
+            loadPokemon();
+        });
     }
 
     renderHTML(){
