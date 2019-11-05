@@ -23,17 +23,18 @@ class PokedexApp extends Component {
         const pokeList = new PokeList({ pokeCards: [] });     
         cardSection.prepend(pokeList.renderDOM());
 
+        const paging = new Paging({ totalResults: 0 });
+        cardSection.prepend(paging.renderDOM());
+
         async function loadPokemon() {
             const response = await getPokemon();
-            
             const pokeCards = response.results;
+            const totResult = response.count;
+            paging.update({ totalResults: totResult });
             pokeList.update({ pokeCards: pokeCards });
         }
-
-        loadPokemon();
         
-        const paging = new Paging();
-        cardSection.prepend(paging.renderDOM());
+        loadPokemon();
 
         window.addEventListener('hashchange', () => {
             loadPokemon();
