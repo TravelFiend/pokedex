@@ -2,27 +2,9 @@ import Component from '../Component.js';
 
 class Search extends Component{
     onRender(form){
-        //function updateControls() {
-        //     const queryStr = window.location.hash.slice(1);
-        //     const searchParams = new URLSearchParams(queryStr);
-
-        //     searchForm.value = searchParams.get('results') || '';
-
-        //     const type = searchParams.get('type');
-        //     if (type){
-                
-        //         searchDrop.selected = searchDrop.value === type;
-        //     }
-        // }
-        // updateControls();
-    
-        // window.addEventListener('hashchange', () => {
-        //     updateControls();
-        // });
-        //}
-
         form.addEventListener('submit', () => {
             event.preventDefault();
+            window.location.hash = '';
             const formData = new FormData(form);
 
             const queryStr = window.location.hash.slice(1);
