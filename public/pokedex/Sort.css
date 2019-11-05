@@ -1,0 +1,17 @@
+.sort {
+    background: #BBCDE5;
+}
+
+label {
+    border-bottom: #222222;
+}
+
+.radios {
+    background: linear-gradient(#BBCDE5, #EAF2EF);
+    padding: 10px;
+}
+
+#sort-text {
+    font-size: 20px;
+    padding: 10px 30px;
+}

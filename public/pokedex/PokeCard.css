@@ -1,0 +1,36 @@
+h2 {
+    text-align: center;
+    text-decoration: underline;
+    margin: 15px 0;
+}
+
+.card-img {
+    margin: 2px;
+    max-width: 97%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: center;
+    max-height: 53%;
+    max-width: 100%;
+}
+
+.poke-cards {
+    background: #BBCDE5;
+    border: 1px solid #1C5D99;
+    color: #222222;
+    font-size: 20px;
+    width: 45vw;
+    max-width: 240px;
+    height: 280px;
+    margin: 0 0 10px 0;
+    border-radius: 5px;
+}
+
+.attributes {
+    line-height: 25px;
+    margin: 0 10px;
+}

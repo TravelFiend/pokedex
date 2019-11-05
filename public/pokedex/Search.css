@@ -1,0 +1,28 @@
+#search-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #639FAB;
+    padding: 5px;
+    border-bottom: #222222;
+}
+
+.search {
+    margin-top: 52px;
+    align-content: center;
+}
+
+.search-drop {
+    display: flex;
+    margin: 10px;
+}
+
+#search-by {
+    margin: 0 10px;
+}
+
+.search-text {
+    display: flex;
+    align-items: center;
+    margin: 0 15px;
+}

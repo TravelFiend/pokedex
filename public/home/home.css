@@ -1,0 +1,17 @@
+.container {
+    margin-top: 52px;
+}
+
+p {
+    padding: 50px;
+    color: #BBCDE5;
+    font-family: 'PT Sans', sans-serif;
+}
+
+body {
+    background: #222222;
+}
+
+header {
+    border-bottom: 2px solid #BBCDE5;
+}
