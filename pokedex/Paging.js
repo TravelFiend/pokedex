@@ -12,7 +12,7 @@ class Paging extends Component{
             const searchParams = new URLSearchParams(queryStr);
             const parsed = parseInt(searchParams.get('page'));
 
-            if (typeof parsed !== 'number') {
+            if (isNaN(parsed)) {
                 page = 1;
             } else {
                 page = parsed;
@@ -25,10 +25,12 @@ class Paging extends Component{
             updateControls();
         });
 
-        const incPage = (inc) => {
+        const incPage = (inc = 0) => {
             const queryStr = window.location.hash.slice(1);
             const searchParams = new URLSearchParams(queryStr);
             searchParams.set('page', page + inc);
+            console.log(page + inc, page, inc);
+            
 
             window.location.hash = searchParams.toString();
         };
